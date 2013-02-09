@@ -1,0 +1,120 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>SimCity OnLine</title>
+  <script src="http://js.pusher.com/1.12/pusher.min.js" type="text/javascript"></script>
+  <script src="jquery-1.8.0.js"></script>
+  <script src="ui/jquery.ui.core.js"></script>
+  <script src="ui/jquery.ui.widget.js"></script>
+  <script src="ui/jquery.ui.mouse.js"></script>
+  <script src="ui/jquery.ui.draggable.js"></script>
+  <script src="api.js"></script>
+  <script src="core.js"></script>
+  <script src="board.js"></script>
+  <script src="gui.js"></script>
+  <script src="money.js"></script>
+  <link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="lockStatement"></div>
+<div id="lock"></div>
+<div id="board">
+  <div id="inBoard" class="inBoard" style="width:<%= @width*20 %>px">
+    <%
+        k = 0;
+        @width.times do
+            w = 0;
+            @height.times do
+                %>
+                    <div id="<%=k%>-<%=w%>"></div>
+                <%
+                w = w + 1
+            end
+            k = k + 1;
+        end
+
+    %>
+</div>
+<div id="demand" class="inBoard" style="width:<%= @width*20 %>px; margin-left:-<%= @width*20 + 3; %>px;">
+  <%
+     k = 0;
+     @width.times do
+         w = 0;
+         @height.times do
+  %>
+          <div id="<%= k %>-<%= w %>" class="demand_0"></div>
+      <%
+         w = w + 1
+         end
+         k = k + 1;
+         end
+
+      %>
+</div>
+<div id="pollution" class="inBoard" style="width:<%= @width*20 %>px; margin-left:-<%= @width * 20 + 3; %>px;">
+
+  <%
+     k = 0;
+     @width.times do
+         w = 0;
+         @height.times do
+  %>
+          <div id="<%= k %>-<%= w %>" class="pollution_0"></div>
+      <%
+         w = w + 1
+         end
+         k = k + 1;
+         end
+
+      %>
+</div>
+</div>
+<sidebar>
+            <span class="header">Co budować:</span>
+            <select name="action">
+                <option value="road">Droga</option>
+                <option value="area2">Strefa mieszkalna</option>
+                <option value="area3">Strefa komercyjna</option>
+                <option value="area4">Strefa przemysłowa</option>
+                <option value="remove">Buldożer</option>
+                <option value="electricity">Elektrownia</option>
+                <option value="elementary_school">Szkoła podstawowa</option>
+            </select><br />
+            
+            <span class="header">Warstwy:</span>
+            <select name="filtres">
+                <option value=""> - żadna - </option>
+                <option value="pollution">Zanieczyszczenie</option>
+                <option value="demand">Elektryczność</option>
+            </select>
+            <div id="money">
+                <span class="header">Obecnie: </span><span id="money_current">100$</span><br />
+                <span class="header">Prognoza: </span><span id="forecast">100$</span>
+            </div>
+            
+            <div id="demand-graph">
+                <hr />
+                <div id="industry" class="graph"></div>
+                <div id="commercial" class="graph"></div>
+                <div id="residental" class="graph"></div>
+            </div>
+            
+            <span class="header">Mieszkańców: </span><span id="people">0</span><br />
+            <span class="header">Miejsc pracy: </span><span id="workPlace">0</span><br />
+            
+            <ul id="taxes">
+                <li>Str. mieszkalna <input type="number" name="taxR" min="0" step="0.1"></li>
+                <li>Str. komercjna <input type="number" name="taxC" min="0" step="0.1"></li>
+                <li>Str. przemysłowa <input type="number" name="taxI" min="0" step="0.1"></li>
+            </ul>
+            
+            <br /><br />
+            
+            <ul id="tips">
+            </ul>
+            
+            <a href="/sign_out">Wyloguj się</a> | <a href="/api/init/">Zacznij od nowa</a>
+        </sidebar>
+</body>
+</html>
+    

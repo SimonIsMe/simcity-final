@@ -1,0 +1,278 @@
+body {
+    margin:0px;
+    padding:0px;
+}
+#lock {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 2;
+    opacity: 0.5;
+    display:none;
+}
+#lockStatement {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    z-index: 3;
+    width: 300px;
+    margin-left: -150px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid red;
+    padding: 5px;
+    display:none;
+    }
+#board {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:250px;
+    background-color:#D2FAD2;
+    overflow:hidden;
+}
+sidebar {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    right:0px;
+    width:250px;
+    background-color: #B5B5FF;
+    border-left: 2px solid #6262FF;
+    font-size:13px;
+    font-family:Arial;
+    padding:10px;
+}
+sidebar .header {
+    font-weight:bold;
+}
+
+#tips {
+	list-style-type: none;
+	padding: 0px;
+	border: 1px solid #2A56A5;
+	height: 150px;
+	overflow: hidden;
+	background-color: #E2E2FF;
+}
+
+#tips li {
+	padding:2px 0 2px 0;
+	border-bottom:1px solid #C8C8FF
+}
+
+.inBoard {
+    position:relative;
+    top:0px;
+    left:0px;
+    float:left;
+}
+.inBoard > div {
+    width:20px;
+    height:20px;
+    background-color:#99cb7e;
+    float:left;
+}
+#pollution, #demand {
+    display:none;
+    margin-left:-403px;
+    margin-top:3px;
+}
+#pollution > div {
+    background-color:red;
+}
+
+#demand > div {
+    background-color:green;
+}
+
+#inBoard {
+    border: 3px solid #628A62;
+}
+
+#inBoard > div.hover {
+    background-color:blue !important;
+}
+#inBoard > div.hoverError {
+    background-color:red !important;
+}
+
+#inBoard > div.betaRoad {
+    background-color:greenyellow !important;
+}
+
+#inBoard > div.betaArea {
+    background-color:yellow;
+}
+
+div.residentalArea {
+    background-color:green !important;
+}
+
+div.commercialArea {
+    background-color:aquamarine !important;
+}
+
+div.industrialArea {
+    background-color:orange !important;
+}
+
+.demand_0, .pollution_0 {
+    opacity:0;
+}
+.demand_1, .pollution_1 {
+    opacity:0.1;
+}
+.demand_2, .pollution_2 {
+    opacity:0.2;
+}
+.demand_3, .pollution_3 {
+    opacity:0.3;
+}
+.demand_4, .pollution_4 {
+    opacity:0.4;
+}
+.demand_5, .pollution_5 {
+    opacity:0.5;
+}
+.demand_6, .pollution_6 {
+    opacity:0.6;
+}
+.demand_7, .pollution_7 {
+    opacity:0.7;
+}
+.demand_8, .pollution_8 {
+    opacity:0.8;
+}
+.demand_9, .pollution_9 {
+    opacity:0.9;
+}
+
+.r0 {
+    background-image:url('./img/r0.png') !important;
+}
+.r20 {
+    background-image:url('./img/r20.png') !important;
+}
+.r40 {
+    background-image:url('./img/r40.png') !important;
+}
+.r60 {
+    background-image:url('./img/r60.png') !important;
+}
+.r80 {
+    background-image:url('./img/r80.png') !important;
+}
+.r100 {
+    background-image:url('./img/r100.png') !important;
+}
+
+.c0 {
+    background-image:url('./img/c0.png') !important;
+}
+.c20 {
+    background-image:url('./img/c20.png') !important;
+}
+.c40 {
+    background-image:url('./img/c40.png') !important;
+}
+.c60 {
+    background-image:url('./img/c60.png') !important;
+}
+.c80 {
+    background-image:url('./img/c80.png') !important;
+}
+.c100 {
+    background-image:url('./img/c100.png') !important;
+}
+
+.i0 {
+    background-image:url('./img/i0.png') !important;
+}
+.i20 {
+    background-image:url('./img/i20.png') !important;
+}
+.i40 {
+    background-image:url('./img/i40.png') !important;
+}
+.i60 {
+    background-image:url('./img/i60.png') !important;
+}
+.i80 {
+    background-image:url('./img/i80.png') !important;
+}
+.i100 {
+    background-image:url('./img/i100.png') !important;
+}
+
+#demand-graph {
+    height:100px;
+    width:100px;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:white;
+    border: 1px solid #5252FD;
+}
+#demand-graph hr {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4578A0;
+    position: relative;
+    top: 40px;
+    right: 0px;
+    left: 0px;
+    margin-bottom: -10px;
+    z-index: 2;
+}
+
+.graph {
+    width:23px;
+    margin-left:5px;
+    margin-right:5px;
+    position:relative;
+    float:left;
+}
+
+#industry {
+    height:100px;
+    background-color: #F3F32D;;
+}
+#commercial {
+    height:100px;
+    background-color:#589BE4;
+}
+#residental {
+    height:100px;
+    background-color:#35C935;
+}
+
+
+.electricity_0 {
+    background-image:url('./img/electricity0.png') !important;
+}
+.electricity_1 {
+    background-image:url('./img/electricity1.png') !important;
+}
+.electricity_2 {
+    background-image:url('./img/electricity2.png') !important;
+}
+.electricity_3 {
+    background-image:url('./img/electricity3.png') !important;
+}
+
+.build_6 {
+    background-image:url('./img/build6.png') !important;
+}
+.build_7 {
+    background-image:url('./img/build7.png') !important;
+}
+.build_8 {
+    background-image:url('./img/build8.png') !important;
+}
+.build_9 {
+    background-image:url('./img/build9.png') !important;
+}
